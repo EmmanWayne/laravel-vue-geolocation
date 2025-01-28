@@ -2,6 +2,9 @@
 
 Este repositorio contiene el setup inicial para una prueba técnica que involucra el desarrollo de una aplicación con Laravel (API) y Vue.js (frontend) con Vuetify (versión 2). La aplicación permitirá registrar recordatorios basados en ubicaciones geográficas y notificará cuando el usuario entre en un radio específico de una ubicación.
 
+* Para simular la ubicación actual de un usuario podemos crear un modelo que nos permita establecer el valor manualmente.
+* La aplicación debe ser reactiva.
+
 ## Requisitos
 
 - Docker y Docker Compose (opcional pero recomendado).
