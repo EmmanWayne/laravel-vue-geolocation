@@ -3,16 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Reminder;
+use App\Models\Recordatorio;
 
-class RecordatoriosController extends Controller
+class RecordatorioController extends Controller
 {
     /**
      * Obtener todos los recordatorios.
      */
     public function index()
     {
-        return response()->json(Reminder::all(), 200);
+        return response()->json(Recordatorio::all(), 200);
     }
 
     /**
@@ -27,7 +27,7 @@ class RecordatoriosController extends Controller
             'radius' => 'required|integer|min:1',
         ]);
 
-        $reminder = Reminder::create($validated);
+        $reminder = Recordatorio::create($validated);
 
         return response()->json($reminder, 201);
     }
@@ -37,7 +37,7 @@ class RecordatoriosController extends Controller
      */
     public function show($id)
     {
-        $reminder = Reminder::find($id);
+        $reminder = Recordatorio::find($id);
 
         if (!$reminder) {
             return response()->json(['message' => 'Recordatorio no encontrado'], 404);
@@ -51,7 +51,7 @@ class RecordatoriosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $reminder = Reminder::find($id);
+        $reminder = Recordatorio::find($id);
 
         if (!$reminder) {
             return response()->json(['message' => 'Recordatorio no encontrado'], 404);
@@ -74,7 +74,7 @@ class RecordatoriosController extends Controller
      */
     public function destroy($id)
     {
-        $reminder = Reminder::find($id);
+        $reminder = Recordatorio::find($id);
 
         if (!$reminder) {
             return response()->json(['message' => 'Recordatorio no encontrado'], 404);
